@@ -26,9 +26,109 @@
 
 
 body {
-  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #fff !important;
+  min-height: 800px;
+}
+
+body.example {
   padding-bottom: 40px;
   background-color: #A1C820 !important;
+  min-height: 800px;
+}
+
+h1 {font-size: 60px}
+h2 {font-size: 48px}
+h3 {font-size: 40px}
+h4 {font-size: 30px}
+h5 {font-size: 18px}
+h6 {font-size: 12px}
+
+.navbar {
+  background-color: #D9E0D0;
+  border-bottom: none;
+}
+
+.navbar-static-top {
+  margin-bottom: 0px;
+  height: 100px;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-default .logo {
+  padding-top: 15px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  font-family: 'Bold';
+  color: #424242;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding-top: 40px;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  font-family: 'Bold';
+  color: #000;
+  font-size: 16px;
+}
+
+.navbar-default .navbar-nav>.active>a {
+  background-color: transparent !important;
+  font-family: 'Bold';
+  color: #fff;
+  font-size: 16px;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.jumbotron {
+  background-color: #D9E0D0;
+  color: #424242;
+}
+
+.btn-download {
+  padding: 15px 25px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 6px;
+  border: none;
+  background: #A1C820;
+  background-image: -webkit-linear-gradient(top, #A1C820, #90b310);
+  background-image: -moz-linear-gradient(top, #A1C820, #90b310);
+  background-image: -ms-linear-gradient(top, #A1C820, #90b310);
+  background-image: -o-linear-gradient(top, #A1C820, #90b310);
+  background-image: linear-gradient(to bottom, #A1C820, #90b310);
+}
+
+.btn-download:hover {
+  background: #b9db40;
+  background-image: -webkit-linear-gradient(top, #b9db40, #aacc31);
+  background-image: -moz-linear-gradient(top, #b9db40, #aacc31);
+  background-image: -ms-linear-gradient(top, #b9db40, #aacc31);
+  background-image: -o-linear-gradient(top, #b9db40, #aacc31);
+  background-image: linear-gradient(to bottom, #b9db40, #aacc31);
+}
+
+.btn-start {
+  padding-left: 30px;
+  font-size: 24px;
+  color: #888;
+  font-family: 'Light';
+  text-decoration: underline;
 }
 
 .form-signup {
@@ -84,4 +184,9 @@ body {
   font-family: 'Light';
   font-size: 18px;
   border-radius: 4px;
+}
+
+.signmeup:disabled {
+  color: #AA7FAA;
+  background-color: #4C004C;
 }
