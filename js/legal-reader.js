@@ -62,11 +62,11 @@
       if(isForm === true) {
         var htmlButton = "<div class=\"legal-button\">"; 
         htmlButton += "<button type=\"button\" id=\"legal-decline\">Decline</button>";
-        htmlButton += "<button type=\"button\" id=\"legal-accept\">Accept</button>";
+        htmlButton += "<button type=\"button\" id=\"legal-accept\" disabled=\"disabled\">Accept</button>";
         htmlButton += "</div>";
       } else {
         var htmlButton = "<div class=\"legal-button\">"; 
-        htmlButton += "<button type=\"button\" id=\"legal-close\">Close</button>";
+        htmlButton += "<button type=\"button\" id=\"legal-close\" disabled=\"disabled\">Close</button>";
         htmlButton += "</div>"; 
       }
       return htmlButton; 
@@ -118,7 +118,6 @@
         // inject the html from markdown
         $('.legal-wrapper').html(contentLegal);
         $('.overlay-slidedown').append(appendActionButton(settings.form));        
-        $('#legal-accept').attr('disabled', 'disabled');
 
         // inject list of legal document's point
         var legalPoint = $('.legal-wrapper').find('h3').map(function() {
@@ -134,7 +133,7 @@
         legalWrapper.bind('scroll', {contentHeight: legalWrapper[0].scrollHeight}, function(evt) {
           var innerHeight = $(this).innerHeight();
           var position = $(this).scrollTop();
-          var overflowHeight = evt.data.contentHeight - innerHeight;
+          var overflowHeight = (evt.data.contentHeight - innerHeight) - 1;
           
           if(position >= overflowHeight) {
             $('#legal-accept').removeAttr('disabled');
@@ -184,6 +183,20 @@
           };
         });
         createBulletPoint(legalPoint);
+        
+        // tracking the scrollbar
+        var legalWrapper = $('.legal-wrapper');
+        legalWrapper.bind('scroll', {contentHeight: legalWrapper[0].scrollHeight}, function(evt) {
+          var innerHeight = $(this).innerHeight();
+          var position = $(this).scrollTop();
+          var overflowHeight = (evt.data.contentHeight - innerHeight) - 1;
+          
+          if(position >= overflowHeight) {
+            $('#legal-close').removeAttr('disabled');
+          } else {
+            return false;
+          }
+        });
         
         // close the legal
         $('#legal-close').click(function() {
