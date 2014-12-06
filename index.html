@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>ToS Hack - Sign Up</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/form.css" rel="stylesheet">
+    <link href="css/legal-reader.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signup" role="form">
+        <h2 class="form-signup-heading">Sign up here.</h2>
+        <div class="form-group">
+          <label for="inputFirstName">First Name</label>
+          <input type="text" id="inputFirstName" class="form-control" required autofocus>
+        </div>
+
+        <div class="form-group">
+          <label for="inputLastName">Last Name</label>
+          <input type="text" id="inputLastName" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputFirstName">Email</label>
+          <input type="email" id="inputEmail" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword">Password</label>
+          <input type="password" id="inputPassword" class="form-control" required>
+        </div>
+
+        <div id="legal-reader" class="input-wrapper"></div>
+        <div class="input-wrapper">
+          <input class="signmeup" type="submit" value="Okay, I'm good to go!">
+        </div>
+      </form>
+
+    </div> <!-- /container -->
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/marked.min.js"></script>
+    <script type="text/javascript" src="js/legal-reader.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.get("http://localhost:3000/legal-file/tos.md", function(responseText) {
+          // only need to pass the html file
+          $('#legal-reader').legalreader(marked(responseText)); 
+        }); 
+      });
+    </script>
+
+
+  </body>
+</html>

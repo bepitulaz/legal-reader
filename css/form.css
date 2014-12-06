@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Regular';
+  src: 
+    url('../fonts/helveticaneue/regular.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'Light';
+  src: 
+    url('../fonts/helveticaneue/light.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'Medium';
+  src: 
+    url('../fonts/helveticaneue/medium.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'Bold';
+  src: 
+    url('../fonts/helveticaneue/bold.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'UltraLight';
+  src: 
+    url('../fonts/helveticaneue/ultralight.ttf') format('truetype'); 
+}
+
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #A1C820 !important;
+}
+
+.form-signup {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signup-heading {
+  font-family: 'Bold';
+  font-size: 38px;
+  color: #fff;
+  text-transform: lowercase;
+  text-align: center;
+}
+.form-signup .form-signup-heading,
+.form-signup .checkbox {
+  margin-bottom: 40px;
+}
+.form-signup .checkbox {
+  font-weight: normal;
+}
+.form-signup .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signup .form-control:focus {
+  z-index: 2;
+}
+.form-signup input[type="email"] {
+  margin-bottom: -1px;
+}
+.form-signup input[type="password"] {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-family: 'Light';
+  color: #424242;
+}
+
+.signmeup {
+  width: 100%;
+  height: 45px;
+  margin: 20px 0 20px 0;
+  background-color: #660066;
+  border: none;
+  color: #fff;
+  font-family: 'Light';
+  font-size: 18px;
+  border-radius: 4px;
+}
