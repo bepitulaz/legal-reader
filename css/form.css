@@ -26,9 +26,35 @@
 
 
 body {
-  padding-top: 40px;
   padding-bottom: 40px;
   background-color: #A1C820 !important;
+  min-height: 800px;
+}
+
+.navbar {
+  background-color: #4B7C0C;
+  border-bottom: none;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-default .navbar-nav>li>a {
+  font-family: 'Light';
+  color: #fff;
+  font-size: 16px;
+}
+
+.navbar-default .navbar-nav>.active>a {
+  background-color: transparent !important;
+  font-family: 'Bold';
+  color: #fff;
+  font-size: 16px;
 }
 
 .form-signup {
@@ -84,4 +110,9 @@ body {
   font-family: 'Light';
   font-size: 18px;
   border-radius: 4px;
+}
+
+.signmeup:disabled {
+  color: #AA7FAA;
+  background-color: #4C004C;
 }
