@@ -1,29 +1,5 @@
-@font-face {
-  font-family: 'Regular';
-  src: 
-    url('../fonts/helveticaneue/regular.ttf') format('truetype'); 
-}
-@font-face {
-  font-family: 'Light';
-  src: 
-    url('../fonts/helveticaneue/light.ttf') format('truetype'); 
-}
-@font-face {
-  font-family: 'Medium';
-  src: 
-    url('../fonts/helveticaneue/medium.ttf') format('truetype'); 
-}
-@font-face {
-  font-family: 'Bold';
-  src: 
-    url('../fonts/helveticaneue/bold.ttf') format('truetype'); 
-}
-@font-face {
-  font-family: 'UltraLight';
-  src: 
-    url('../fonts/helveticaneue/ultralight.ttf') format('truetype'); 
-}
-
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 
 body {
   padding-bottom: 40px;
@@ -63,22 +39,24 @@ h6 {font-size: 12px}
 }
 
 .navbar-default .navbar-nav>li>a {
-  font-family: 'Bold';
+  font-family: 'Roboto Slab', Arial, sans-serif;
   color: #424242;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 700;
   text-transform: uppercase;
   padding-top: 40px;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-  font-family: 'Bold';
+  font-family: 'Roboto Slab', Arial, sans-serif;
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .navbar-default .navbar-nav>.active>a {
   background-color: transparent !important;
-  font-family: 'Bold';
+  font-family: 'Bold', Arial, sans-serif;
   color: #fff;
   font-size: 16px;
 }
@@ -98,6 +76,15 @@ h6 {font-size: 12px}
 .jumbotron {
   background-color: #D9E0D0;
   color: #424242;
+}
+
+.jumbotron h2 {
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+}
+
+.overview {
+  color: #555;
 }
 
 .btn-download {
@@ -127,7 +114,7 @@ h6 {font-size: 12px}
   padding-left: 30px;
   font-size: 24px;
   color: #888;
-  font-family: 'Light';
+  font-family: 'Light', Arial, sans-serif;
   text-decoration: underline;
 }
 
@@ -137,7 +124,7 @@ h6 {font-size: 12px}
   margin: 0 auto;
 }
 .form-signup-heading {
-  font-family: 'Bold';
+  font-family: 'Bold', Arial, sans-serif;
   font-size: 38px;
   color: #fff;
   text-transform: lowercase;
@@ -170,7 +157,7 @@ h6 {font-size: 12px}
 }
 
 .form-group label {
-  font-family: 'Light';
+  font-family: 'Light', Arial, sans-serif;
   color: #424242;
 }
 
@@ -181,7 +168,7 @@ h6 {font-size: 12px}
   background-color: #660066;
   border: none;
   color: #fff;
-  font-family: 'Light';
+  font-family: 'Light', Arial, sans-serif;
   font-size: 18px;
   border-radius: 4px;
 }
