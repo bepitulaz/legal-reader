@@ -32,7 +32,7 @@ body {
 }
 
 .navbar {
-  background-color: #4B7C0C;
+  background-color: rgba(0,0,0,0.5);
   border-bottom: none;
 }
 
@@ -50,11 +50,29 @@ body {
   font-size: 16px;
 }
 
+.navbar-default .navbar-nav>li>a:hover {
+  font-family: 'Light';
+  color: #333;
+  font-size: 16px;
+}
+
 .navbar-default .navbar-nav>.active>a {
   background-color: transparent !important;
   font-family: 'Bold';
   color: #fff;
   font-size: 16px;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: rgba(0,0,0,0.5);
 }
 
 .form-signup {
