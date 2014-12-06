@@ -49,7 +49,9 @@
           <input class="signmeup" type="submit" value="Okay, I'm good to go!">
         </div>
       </form>
-
+      
+      <br>
+      <a href="" id="apache-license">Apache License</a>
     </div> <!-- /container -->
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -57,9 +59,14 @@
     <script type="text/javascript" src="js/legal-reader.js"></script>
     <script>
       $(document).ready(function() {
+        // use inside the form
         $.get("http://localhost:3000/legal-file/tos.md", function(responseText) {
-          // only need to pass the html file
           $('#legal-reader').legalreader(marked(responseText)); 
+        });
+        
+        // use outside the form
+        $.get("http://localhost:3000/legal-file/apache-license.md", function(responseText) {
+          $('#apache-license').legalreader(marked(responseText), {form: false}); 
         }); 
       });
     </script>
