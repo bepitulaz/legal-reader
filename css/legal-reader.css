@@ -11,7 +11,8 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(153, 204, 51, 0.9);
+  background: rgba(255, 255, 255, 1);
+  z-index: 9999;
 }
 
 /* Effects */
@@ -40,7 +41,7 @@
 }
 
 .legal-point {
-  width: 25%;
+  width: 30%;
   height: 90%;
   float: left;
   margin-right: 30px;
@@ -48,7 +49,7 @@
 }
 
 .legal-wrapper {
-  width: 55%;
+  width: 65%;
   height: 90%;
   float: left;
   overflow-y: scroll;
@@ -144,3 +145,35 @@
 [data-tips].legal-top-tip:hover:before {
 	left: 15px;
 }
+
+
+/* LEGAL WRAPPER */
+.legal-wrapper h1 {
+  font-size: 32px;
+}
+
+.legal-wrapper h2 {
+  font-size: 28px;
+}
+
+.legal-wrapper h3 {
+  font-size: 24px;
+}
+
+.legal-wrapper h4 {
+  font-size: 20px;
+}
+
+.legal-wrapper h5 {
+  font-size: 16px;
+}
+
+.legal-wrapper h6 {
+  font-size: 12px;
+}
+
+/* LEGAL POINTS */
+.legal-point a:link {color: #90b310;}
+.legal-point a:hover {color: #A1C820;}
+.legal-point a:visited {color: #660066;}
+.legal-point a:active {color: #424242;}
