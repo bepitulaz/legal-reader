@@ -59,12 +59,13 @@
           <div class="col-md-6">
             <pre>
 <code class="language-javascript">
-$(document).ready(function() {
-  $.get("http://localhost:3000/legal-file/tos.md", function(responseText) {
-    // only need to pass the html file
-    $('#legal-reader').legalreader(marked(responseText)); 
-  }); 
-});
+// 1. Read your markdown file that had been written by following our conventions
+$.get("http://localhost:3000/legal-file/tos.md", function(responseText) {
+  // 2. Use your favourite markdown parser
+  var parsedFile = marked(responseText);
+  // 3. Let Legal Reader processes the html file
+  $('#legal-reader').legalreader(parsedFile); 
+}); 
 </code>
             </pre>
           </div>
@@ -76,13 +77,16 @@ $(document).ready(function() {
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          Chocolate bar candy canes cotton candy bear claw gingerbread. Croissant pudding I love toffee liquorice oat cake I love jujubes I love. Gingerbread dragée candy danish jelly. Muffin cake toffee gummi bears. Donut tiramisu I love. I love I love jelly-o muffin muffin tiramisu carrot cake I love.
+          <h4>1. Write in Markdown</h4>
+          <p>Write your legal document in markdown format and follow our writing conventions, so Legal Reader can process your document. <a href="">Read the conventions.</a></p>
         </div>
         <div class="col-md-4">
-          Chocolate bar candy canes cotton candy bear claw gingerbread. Croissant pudding I love toffee liquorice oat cake I love jujubes I love. Gingerbread dragée candy danish jelly. Muffin cake toffee gummi bears. Donut tiramisu I love. I love I love jelly-o muffin muffin tiramisu carrot cake I love.
+          <h4>2. Pick your Markdown Parser</h4>
+          <p>Some nice guys on earth have written cool javascript markdown parser to convert your markdown document into html. You can use our favourite parser too. <a href="">Please tell me.</a> 
         </div>
         <div class="col-md-4">
-          Chocolate bar candy canes cotton candy bear claw gingerbread. Croissant pudding I love toffee liquorice oat cake I love jujubes I love. Gingerbread dragée candy danish jelly. Muffin cake toffee gummi bears. Donut tiramisu I love. I love I love jelly-o muffin muffin tiramisu carrot cake I love.
+          <h4>3. Let LegalReader Work</h4>
+          <p>The fun starts here. Write one line of code to activate the plugin, then your user will enjoy to read your legal document. <a href="">Cool! Show me the magic!</a></p>
         </div>
       </div>
     </div>
@@ -96,5 +100,18 @@ $(document).ready(function() {
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/prism.js"></script>
+    <script type="text/javascript" src="js/marked.min.js"></script>
+    <script type="text/javascript" src="js/legal-reader.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var url = window.location.protocol + "//" + window.location.host;
+        $.get(url + "/LICENSE", function(responseText) {
+          var parsedFile = marked(responseText);
+          $("#license").legalreader(parsedFile, {
+            form: false  
+          });  
+        });    
+      });
+    </script>
   </body>
 </html>

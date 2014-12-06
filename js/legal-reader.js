@@ -54,6 +54,22 @@
     }
     
     /**
+     * Render the overlay html outside the form.
+     * @param none
+     * @returns {string} html to be rendered on the front end
+     */ 
+    function renderHtmlOutsideForm() {
+      var htmlContent = "<div class=\"overlay overlay-slidedown\">";
+      htmlContent += "<div class=\"legal-container\">";
+      htmlContent += "<div class=\"legal-point\"></div>";
+      htmlContent += "<div class=\"legal-wrapper\"></div>";
+      htmlContent += "</div>";
+      htmlContent += "<div class=\"clear\"></div>";
+      htmlContent += "</div>";
+      return htmlContent; 
+    }
+    
+    /**
      * Append 'Accept' or 'Decline' button to the document.
      * @param {boolean} isForm - determine the location plugin
      * @returns {string} - button accept and decline
@@ -130,17 +146,21 @@
         
         // tracking the scrollbar
         var legalWrapper = $('.legal-wrapper');
-        legalWrapper.bind('scroll', {contentHeight: legalWrapper[0].scrollHeight}, function(evt) {
-          var innerHeight = $(this).innerHeight();
-          var position = $(this).scrollTop();
-          var overflowHeight = (evt.data.contentHeight - innerHeight) - 1;
-          
-          if(position >= overflowHeight) {
-            $('#legal-accept').removeAttr('disabled');
-          } else {
-            return false;
-          }
-        });
+        var overflowHeight = (legalWrapper[0].scrollHeight - legalWrapper.height()) - 1;        
+        
+        if(overflowHeight <= 0) {
+          $('#legal-accept').removeAttr('disabled');
+        } else { 
+          legalWrapper.bind('scroll', {contentHeight: overflowHeight}, function(evt) {
+            var position = $(this).scrollTop();
+
+            if(position >= evt.data.contentHeight) {
+              $('#legal-accept').removeAttr('disabled');
+            } else {
+              return false;
+            }
+          });
+        } 
 
         // decline the legal
         $('#legal-decline').click(function() {
@@ -163,7 +183,9 @@
      * @param {object} tag - html selector to be modified.
      */
     function outsideTheForm(tag) {
-      // making the tool tip
+      $("body").append(renderHtmlOutsideForm());
+
+      // making the tool tip 
       tag.addClass('legal-top-tip');
       tag.attr('data-tips', countReadingTime(contentLegal) + " " + settings.timeString);
 
@@ -186,17 +208,21 @@
         
         // tracking the scrollbar
         var legalWrapper = $('.legal-wrapper');
-        legalWrapper.bind('scroll', {contentHeight: legalWrapper[0].scrollHeight}, function(evt) {
-          var innerHeight = $(this).innerHeight();
-          var position = $(this).scrollTop();
-          var overflowHeight = (evt.data.contentHeight - innerHeight) - 1;
-          
-          if(position >= overflowHeight) {
-            $('#legal-close').removeAttr('disabled');
-          } else {
-            return false;
-          }
-        });
+        var overflowHeight = (legalWrapper[0].scrollHeight - legalWrapper.height()) - 1;        
+        
+        if(overflowHeight <= 0) {
+          $('#legal-close').removeAttr('disabled');
+        } else { 
+          legalWrapper.bind('scroll', {contentHeight: overflowHeight}, function(evt) {
+            var position = $(this).scrollTop();
+
+            if(position >= evt.data.contentHeight) {
+              $('#legal-close').removeAttr('disabled');
+            } else {
+              return false;
+            }
+          });
+        }
         
         // close the legal
         $('#legal-close').click(function() {
