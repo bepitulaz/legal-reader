@@ -39,35 +39,48 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="container">
+    <div class="container example">
+      <div class="row">
+        Carrot cake tart gummi bears gummi bears fruitcake chocolate cake danish chocolate bar. Candy bear claw sweet roll danish sesame snaps sugar plum apple pie. Oat cake wafer liquorice cotton candy applicake. Ice cream tart topping cookie I love.Chocolate bar candy canes cotton candy bear claw gingerbread. Croissant pudding I love toffee liquorice oat cake I love jujubes I love. Gingerbread dragée candy danish jelly.
+      </div>
+      <div class="row">
+        <!-- Inside form -->
+        <div class="col-md-6 col-xs-12">
+          <h4>1. Inside your form</h4><br><br>
+          <form class="form-signup inside" role="form">
+            <h2 class="form-signup-heading">Sign up here.</h2>
+            <div class="form-group">
+              <label for="inputFirstName">First Name</label>
+              <input type="text" id="inputFirstName" class="form-control" required autofocus>
+            </div>
 
-      <form class="form-signup" role="form">
-        <h2 class="form-signup-heading">Sign up here.</h2>
-        <div class="form-group">
-          <label for="inputFirstName">First Name</label>
-          <input type="text" id="inputFirstName" class="form-control" required autofocus>
+            <div class="form-group">
+              <label for="inputLastName">Last Name</label>
+              <input type="text" id="inputLastName" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="inputFirstName">Email</label>
+              <input type="email" id="inputEmail" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input type="password" id="inputPassword" class="form-control" required>
+            </div>
+
+            <div id="legal-reader" class="input-wrapper"></div>
+            <div class="input-wrapper">
+              <input class="signmeup" type="submit" value="Okay, I'm good to go!">
+            </div>
+          </form>
         </div>
 
-        <div class="form-group">
-          <label for="inputLastName">Last Name</label>
-          <input type="text" id="inputLastName" class="form-control" required>
+        <!-- Outside Form -->
+        <div class="col-md-6 col-xs-12">
+          <h4>2. On the links</h4><br><br>
         </div>
-
-        <div class="form-group">
-          <label for="inputFirstName">Email</label>
-          <input type="email" id="inputEmail" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-          <label for="inputPassword">Password</label>
-          <input type="password" id="inputPassword" class="form-control" required>
-        </div>
-
-        <div id="legal-reader" class="input-wrapper"></div>
-        <div class="input-wrapper">
-          <input class="signmeup" type="submit" value="Okay, I'm good to go!">
-        </div>
-      </form>
+      </div>
 
     </div> <!-- /container -->
 
@@ -78,7 +91,7 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $.get("http://localhost:3000/legal-file/tos.md", function(responseText) {
-          $("#legal-reader").legalreader(marked(responseText));
+          $("#legal-reader").legalreader(marked(responseText), {legalSentence: "Please read our", legalName: "Terms & Conditions", timeString: "minutes only to read it"});
         });    
       });
     </script>
