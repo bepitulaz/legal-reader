@@ -15,7 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/form.css" rel="stylesheet">
-    <link href="css/legal-reader.css" rel="stylesheet">
+    <link href="css/legal-reader.css" rel="stylesheet"> 
   </head>
 
   <body>
@@ -72,7 +72,15 @@
     </div> <!-- /container -->
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
+    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/marked.min.js"></script>
+    <script type="text/javascript" src="js/legal-reader.js"></script>    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $.get("http://localhost:3000/legal-file/tos.md", function(responseText) {
+          $("#legal-reader").legalreader(marked(responseText));
+        });    
+      });
+    </script>
   </body>
 </html>

@@ -1,27 +1,22 @@
 @font-face {
   font-family: 'Regular';
-  src: 
-    url('../fonts/helveticaneue/regular.ttf') format('truetype'); 
+  src: url('../fonts/helveticaneue/regular.ttf') format('truetype'); 
 }
 @font-face {
   font-family: 'Light';
-  src: 
-    url('../fonts/helveticaneue/light.ttf') format('truetype'); 
+  src: url('../fonts/helveticaneue/light.ttf') format('truetype'); 
 }
 @font-face {
   font-family: 'Medium';
-  src: 
-    url('../fonts/helveticaneue/medium.ttf') format('truetype'); 
+  src: url('../fonts/helveticaneue/medium.ttf') format('truetype'); 
 }
 @font-face {
   font-family: 'Bold';
-  src: 
-    url('../fonts/helveticaneue/bold.ttf') format('truetype'); 
+  src: url('../fonts/helveticaneue/bold.ttf') format('truetype'); 
 }
 @font-face {
   font-family: 'UltraLight';
-  src: 
-    url('../fonts/helveticaneue/ultralight.ttf') format('truetype'); 
+  src: url('../fonts/helveticaneue/ultralight.ttf') format('truetype'); 
 }
 
 
