@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>ToS Hack - Sign Up</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/form.css" rel="stylesheet">
+    <link href="css/legal-reader.css" rel="stylesheet"> 
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="index.html"><img src="img/lr.png" class="logo"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/bepitulaz/legal-reader">Source Code</a></li>
+            <li><a href="docs.html">Docs</a></li>
+            <li><a href="example.html">Examples</a></li>
+            <li><a href="about.html">The Creators</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container about">
+      <div class="row">
+        <h3>Who are we?</h3>
+        <br><br>
+        <p>This project were initiated by a married couple. They are <a href="http://asep.co" target="_blank">Asep Bagja</a> and <a href="http://retno.co" target="_blank">Retno Ika</a>. </p>
+      </div> 
+    </div> <!-- Container ends here -->
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">© Copyright 2014 <a href="http://asep.co">Asep Bagja P</a> | Website design by <a href="http://retno.co">Retno Ika S</a> | Released under <a href="" id="license">MIT License</a></p>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/marked.min.js"></script>
+    <script type="text/javascript" src="js/legal-reader.js"></script>    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $.get("http://localhost:3000/legal-file/tos.md", function(responseText) {
+          $("#legal-reader").legalreader(marked(responseText), {legalSentence: "Please read our", legalName: "Terms & Conditions", timeString: "minutes only to read it"});
+        });    
+      });
+    </script>
+  </body>
+</html>

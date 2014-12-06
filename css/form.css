@@ -213,6 +213,11 @@ h6 {font-size: 12px}
   color: #65B300;
 }
 
+.nav-pills a:hover {
+  background-color: #fff !important;
+  color: #424242;
+}
+
 /* SIDEBAR */
 .sidebar {
   display: none;
@@ -268,6 +273,10 @@ h6 {font-size: 12px}
 }
 .main .page-header {
   margin-top: 0;
+}
+
+.about a {
+  color: #65B300;
 }
 
 
