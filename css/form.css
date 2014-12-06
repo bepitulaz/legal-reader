@@ -27,32 +27,52 @@
 
 body {
   padding-bottom: 40px;
+  background-color: #fff !important;
+  min-height: 800px;
+}
+
+body.example {
+  padding-bottom: 40px;
   background-color: #A1C820 !important;
   min-height: 800px;
 }
 
+h1 {font-size: 60px}
+h2 {font-size: 48px}
+h3 {font-size: 40px}
+h4 {font-size: 30px}
+h5 {font-size: 18px}
+h6 {font-size: 12px}
+
 .navbar {
-  background-color: rgba(0,0,0,0.5);
+  background-color: #2F3725;
   border-bottom: none;
 }
 
 .navbar-static-top {
-  margin-bottom: 19px;
+  margin-bottom: 0px;
+  height: 100px;
 }
 
 .navbar-default .navbar-brand {
   color: #fff !important;
 }
 
+.navbar-default .logo {
+  padding-top: 15px;
+}
+
 .navbar-default .navbar-nav>li>a {
-  font-family: 'Light';
-  color: #fff;
+  font-family: 'Bold';
+  color: #e1e0dc;
   font-size: 16px;
+  text-transform: uppercase;
+  padding-top: 40px;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-  font-family: 'Light';
-  color: #333;
+  font-family: 'Bold';
+  color: #fff;
   font-size: 16px;
 }
 
@@ -73,6 +93,42 @@ body {
 
 .navbar-default .navbar-toggle:hover {
   background-color: rgba(0,0,0,0.5);
+}
+
+.jumbotron {
+  background-color: #2F3725;
+  color: #e1e0dc;
+}
+
+.btn-download {
+  padding: 15px 25px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 6px;
+  border: none;
+  background: #A1C820;
+  background-image: -webkit-linear-gradient(top, #A1C820, #90b310);
+  background-image: -moz-linear-gradient(top, #A1C820, #90b310);
+  background-image: -ms-linear-gradient(top, #A1C820, #90b310);
+  background-image: -o-linear-gradient(top, #A1C820, #90b310);
+  background-image: linear-gradient(to bottom, #A1C820, #90b310);
+}
+
+.btn-download:hover {
+  background: #b9db40;
+  background-image: -webkit-linear-gradient(top, #b9db40, #aacc31);
+  background-image: -moz-linear-gradient(top, #b9db40, #aacc31);
+  background-image: -ms-linear-gradient(top, #b9db40, #aacc31);
+  background-image: -o-linear-gradient(top, #b9db40, #aacc31);
+  background-image: linear-gradient(to bottom, #b9db40, #aacc31);
+}
+
+.btn-start {
+  padding-left: 30px;
+  font-size: 24px;
+  color: #fff;
+  font-family: 'Light';
+  text-decoration: underline;
 }
 
 .form-signup {
