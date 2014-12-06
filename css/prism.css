@@ -36,7 +36,7 @@ pre[class*="language-"] {
 
 pre[class*="language-"],
 :not(pre) > code[class*="language-"] {
-	background: hsl(30, 20%, 25%);
+	background: #424242;
 }
 
 /* Code blocks */
@@ -44,7 +44,7 @@ pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
-	border: .3em solid hsl(30, 20%, 40%);
+	border: .3em solid #424242;
 	border-radius: .5em;
 	box-shadow: 1px 1px .5em black inset;
 }
@@ -53,7 +53,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"] {
 	padding: .15em .2em .05em;
 	border-radius: .3em;
-	border: .13em solid hsl(30, 20%, 40%);
+	border: .13em solid #424242;
 	box-shadow: 1px 1px .3em -.1em black inset;
 }
 

@@ -2,7 +2,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 
 body {
-  padding-bottom: 40px;
   background-color: #fff !important;
   min-height: 800px;
 }
@@ -111,7 +110,7 @@ h6 {font-size: 12px}
 }
 
 .btn-start {
-  padding-left: 30px;
+  padding-left: 50px;
   font-size: 24px;
   color: #888;
   font-family: 'Light', Arial, sans-serif;
@@ -176,4 +175,20 @@ h6 {font-size: 12px}
 .signmeup:disabled {
   color: #AA7FAA;
   background-color: #4C004C;
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.footer a {
+  color: #65B300;
 }
