@@ -45,7 +45,7 @@ h5 {font-size: 18px}
 h6 {font-size: 12px}
 
 .navbar {
-  background-color: #2F3725;
+  background-color: #D9E0D0;
   border-bottom: none;
 }
 
@@ -64,7 +64,7 @@ h6 {font-size: 12px}
 
 .navbar-default .navbar-nav>li>a {
   font-family: 'Bold';
-  color: #e1e0dc;
+  color: #424242;
   font-size: 16px;
   text-transform: uppercase;
   padding-top: 40px;
@@ -72,7 +72,7 @@ h6 {font-size: 12px}
 
 .navbar-default .navbar-nav>li>a:hover {
   font-family: 'Bold';
-  color: #fff;
+  color: #000;
   font-size: 16px;
 }
 
@@ -96,8 +96,8 @@ h6 {font-size: 12px}
 }
 
 .jumbotron {
-  background-color: #2F3725;
-  color: #e1e0dc;
+  background-color: #D9E0D0;
+  color: #424242;
 }
 
 .btn-download {
@@ -126,7 +126,7 @@ h6 {font-size: 12px}
 .btn-start {
   padding-left: 30px;
   font-size: 24px;
-  color: #fff;
+  color: #888;
   font-family: 'Light';
   text-decoration: underline;
 }
