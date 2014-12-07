@@ -19,6 +19,11 @@ h4 {font-size: 26px}
 h5 {font-size: 18px}
 h6 {font-size: 12px}
 
+::selection {
+  background-color: #AC91C8;
+  color: #fff;
+}
+
 .navbar {
   background-color: #D9E0D0;
   border-bottom: none;
