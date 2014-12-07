@@ -89,6 +89,10 @@
   background-color: #bdbdbd;
 }
 
+#legal-accept:disabled {
+  background-color: #bdbdbd;
+}
+
 
 /* tool tip if the plugin use outside the form */
 
