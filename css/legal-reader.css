@@ -70,6 +70,23 @@
 .legal-button button {
   width: 80px;
   height: 40px;
+  margin: 0 20px 0 20px;
+  background-color: #A1C820;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 5px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+}
+
+.legal-button button:hover {
+  background-color: #ececec;
+  color: #424242;
+}
+
+#legal-decline {
+  background-color: #bdbdbd;
 }
 
 
