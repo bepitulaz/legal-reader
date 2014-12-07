@@ -38,12 +38,13 @@
      * Render the button and the content of the legal document on popup overlay.
      * @param {object} opt - It is the same as plugin settings parameter.
      * @param {integer} readingTime - The total time to read the content.
+     * @param {string} id - id attribute for distinguishing the overlay content.
      * @returns {string} html to be rendered on the front end.
      */
-    function renderTheHtml(opt, readingTime) {
+    function renderTheHtml(opt, readingTime, id) {
       var htmlContent = opt.legalSentence + " "; 
       htmlContent += "<a href=\"\" id=\"open-legal\">"+opt.legalName+"</a> ("+readingTime+" "+opt.timeString+")";
-      htmlContent += "<div class=\"overlay overlay-slidedown\">";
+      htmlContent += "<div id=\""+id+"\"class=\"overlay overlay-slidedown\">";
       htmlContent += "<div class=\"legal-container\">";
       htmlContent += "<div class=\"legal-point\"></div>";
       htmlContent += "<div class=\"legal-wrapper\"></div>";
@@ -55,11 +56,11 @@
     
     /**
      * Render the overlay html outside the form.
-     * @param none
-     * @returns {string} html to be rendered on the front end
+     * @param {string} id - id attribute for distinguishing the overlay content.
+     * @returns {string} html to be rendered on the front end.
      */ 
-    function renderHtmlOutsideForm() {
-      var htmlContent = "<div class=\"overlay overlay-slidedown\">";
+    function renderHtmlOutsideForm(id) {
+      var htmlContent = "<div id=\""+id+"\" class=\"overlay overlay-slidedown\">";
       htmlContent += "<div class=\"legal-container\">";
       htmlContent += "<div class=\"legal-point\"></div>";
       htmlContent += "<div class=\"legal-wrapper\"></div>";
@@ -123,17 +124,18 @@
      */
     function insideTheForm(tag) {
       var readingTime = countReadingTime(contentLegal);
-      tag.html(renderTheHtml(settings, readingTime));
+      var generatedId = tag.attr('id') + "-overlay"; 
+      tag.html(renderTheHtml(settings, readingTime, generatedId));
       $('input[type="submit"]').attr("disabled", "disabled");
       
       // event for opening and closing the overlay 
-      $('#open-legal').click(function(e) {
+      $('#open-legal').bind('click', {idTag: generatedId}, function(e) {
         e.preventDefault();
-        $('.overlay-slidedown').addClass('open');     
+        $("#"+e.data.idTag).addClass('open');     
 
         // inject the html from markdown
         $('.legal-wrapper').html(contentLegal);
-        $('.overlay-slidedown').append(appendActionButton(settings.form));        
+        $("#"+e.data.idTag).append(appendActionButton(settings.form));        
 
         // inject list of legal document's point
         var legalPoint = $('.legal-wrapper').find('h3').map(function() {
@@ -164,13 +166,13 @@
 
         // decline the legal
         $('#legal-decline').click(function() {
-          $('.overlay-slidedown').removeClass('open');
+          $("#"+e.data.idTag).removeClass('open');
           $('.legal-button').remove();
         });
 
         // accept the legal
         $('#legal-accept').bind('click', {selector: tag}, function(evt) { 
-          $('.overlay-slidedown').removeClass('open');
+          $("#"+e.data.idTag).removeClass('open');
           $('.legal-button').remove();
           evt.data.selector.html(acceptTheLegal());
           $('input[type="submit"]').removeAttr('disabled');
@@ -183,19 +185,20 @@
      * @param {object} tag - html selector to be modified.
      */
     function outsideTheForm(tag) {
-      $("body").append(renderHtmlOutsideForm());
+      var generatedId = tag.attr('id') + "-overlay";
+      $("body").append(renderHtmlOutsideForm(generatedId));
 
       // making the tool tip 
       tag.addClass('legal-top-tip');
       tag.attr('data-tips', countReadingTime(contentLegal) + " " + settings.timeString);
 
-      tag.click(function(e) {
+      tag.bind('click', {idTag: generatedId}, function(e) {
         e.preventDefault();
-        $('.overlay-slidedown').addClass('open');     
+        $("#"+e.data.idTag).addClass('open');     
         
         // inject the html from markdown
         $('.legal-wrapper').html(contentLegal);
-        $('.overlay-slidedown').append(appendActionButton(settings.form));
+        $("#"+e.data.idTag).append(appendActionButton(settings.form));
 
         // inject list of legal document's point
         var legalPoint = $('.legal-wrapper').find('h3').map(function() {
@@ -226,7 +229,7 @@
         
         // close the legal
         $('#legal-close').click(function() {
-          $('.overlay-slidedown').removeClass('open');
+          $("#"+e.data.idTag).removeClass('open');
           $('.legal-button').remove();
         });
       }); 
