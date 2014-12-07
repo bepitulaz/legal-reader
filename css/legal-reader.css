@@ -195,7 +195,7 @@
 }
 
 /* LEGAL POINTS */
-.legal-point a:link {color: #90b310;}
+.legal-point a {color: #90b310;}
 .legal-point a:hover {color: #660066;}
-.legal-point a:visited {color: #90b310;}
-.legal-point a:active {color: #660066;}
+.legal-point a:active {color: #90b310;}
+.legal-point a:visited {color: #660066;}
