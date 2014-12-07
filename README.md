@@ -20,7 +20,7 @@ It is an easy to use jQuery plugin, so you can use it on your website with minim
 
 ![Example](/img/scr_example.png "Usage example")
 
-![Convert The Legal](/img/scr_example.png "Convert the legal")
+![Convert The Legal](/img/scr_convert.png "Convert the legal")
 
 ## APIs Used
 
