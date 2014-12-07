@@ -106,15 +106,18 @@
     <script type="text/javascript" src="js/legal-reader.js"></script>    
     <script type="text/javascript">
       $(document).ready(function() {
-        $.get("http://localhost:3000/legal-file/tos.md", function(responseText) {
-          $("#legal-reader").legalreader(marked(responseText), {legalSentence: "Please read our", legalName: "Terms & Conditions", timeString: "minutes only to read it"});
-        });    
+            
       });
     </script>
     
     <script type="text/javascript">
       $(document).ready(function() {
         var url = window.location.protocol + "//" + window.location.host;
+
+        $.get(url + "/legal-file/tos.md", function(responseText) {
+          $("#legal-reader").legalreader(marked(responseText), {legalSentence: "Please read our", legalName: "Terms & Conditions", timeString: "minutes only to read it"});
+        });
+        
         $.get(url + "/LICENSE", function(responseText) {
           var parsedFile = marked(responseText);
           $("#license").legalreader(parsedFile, {
