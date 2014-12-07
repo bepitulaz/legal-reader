@@ -1,5 +1,5 @@
-/*@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);*/
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 
 body {
   background-color: #fff !important;
@@ -15,7 +15,7 @@ body.example {
 h1 {font-size: 60px}
 h2 {font-size: 48px}
 h3 {font-size: 40px}
-h4 {font-size: 30px}
+h4 {font-size: 26px}
 h5 {font-size: 18px}
 h6 {font-size: 12px}
 
@@ -125,6 +125,22 @@ h6 {font-size: 12px}
 
 .btn-start:hover {
   color: #90b310;
+}
+
+.start h4 {
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-weight: 400;
+}
+
+.start p {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 300;
+}
+
+.start a {
+  color: #65B300;
+  font-weight: 500;
+  text-decoration: underline;
 }
 
 .inside {
