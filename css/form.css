@@ -83,6 +83,11 @@ h6 {font-size: 12px}
   font-weight: 400;
 }
 
+.jumbotron p {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 300;
+}
+
 .overview {
   color: #555;
 }
@@ -116,6 +121,10 @@ h6 {font-size: 12px}
   color: #888;
   font-family: 'Light', Arial, sans-serif;
   text-decoration: underline;
+}
+
+.btn-start:hover {
+  color: #90b310;
 }
 
 .inside {
