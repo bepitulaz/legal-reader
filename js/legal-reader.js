@@ -218,7 +218,6 @@
         } else { 
           legalWrapper.bind('scroll', {contentHeight: overflowHeight}, function(evt) {
             var position = $(this).scrollTop();
-
             if(position >= evt.data.contentHeight) {
               $('#legal-close').removeAttr('disabled');
             } else {
