@@ -224,6 +224,7 @@ h6 {font-size: 12px}
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #f5f5f5;
+  z-index: 1000;
 }
 
 .footer a {

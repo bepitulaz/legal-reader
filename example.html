@@ -87,10 +87,8 @@
           <p>The plugin only display the total number of reading time inside the tool tip.</p>
           <br><br>
           <ul class="nav nav-pills">
-            <li role="presentation" id="privacy"><a href="#">Privacy</a></li>
-            <li role="presentation" id="cookies"><a href="#">Cookies</a></li>
-            <li role="presentation" id="tos"><a href="#">Terms of Service</a></li>
-            <li role="presentation" id="user"><a href="#">User Policy</a></li>
+            <li role="presentation"><a href="#" id="privacy">Privacy</a></li>
+            <li role="presentation"><a href="#" id="term-of-service">Terms of Service</a></li>
           </ul>
         </div>
       </div>
@@ -122,7 +120,23 @@
           $("#license").legalreader(parsedFile, {
             form: false  
           });  
-        });    
+        });
+
+        // privacy
+        $.get(url + "/legal-file/privacy.md", function(responseText) {
+          var parsedFile = marked(responseText);
+          $("#privacy").legalreader(parsedFile, {
+            form: false  
+          });  
+        });
+
+        // tos
+        $.get(url + "/legal-file/term-of-service.md", function(responseText) {
+          var parsedFile = marked(responseText);
+          $("#term-of-service").legalreader(parsedFile, {
+            form: false  
+          });  
+        });
       });
     </script> 
   </body>
