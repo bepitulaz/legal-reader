@@ -1,8 +1,9 @@
 /**
  * A javascript library for converting legal document into user friendly form.
  *
- * @author: AsepCo Team
- * @license: MIT License
+ * @author AsepCo Team
+ * @version 1.0
+ * @license MIT License
  */
 (function($) {
   
@@ -46,7 +47,7 @@
       htmlContent += "<a href=\"\" id=\"open-legal\">"+opt.legalName+"</a> ("+readingTime+" "+opt.timeString+")";
       htmlContent += "<div id=\""+id+"\"class=\"overlay overlay-slidedown\">";
       htmlContent += "<div class=\"legal-container\">";
-      htmlContent += "<div class=\"legal-point\"></div>";
+      htmlContent += "<div class=\"legal-point\"><ul></ul></div>";
       htmlContent += "<div class=\"legal-wrapper\"></div>";
       htmlContent += "</div>";
       htmlContent += "<div class=\"clear\"></div>";
@@ -62,7 +63,7 @@
     function renderHtmlOutsideForm(id) {
       var htmlContent = "<div id=\""+id+"\" class=\"overlay overlay-slidedown\">";
       htmlContent += "<div class=\"legal-container\">";
-      htmlContent += "<div class=\"legal-point\"></div>";
+      htmlContent += "<div class=\"legal-point\"><ul></ul></div>";
       htmlContent += "<div class=\"legal-wrapper\"></div>";
       htmlContent += "</div>";
       htmlContent += "<div class=\"clear\"></div>";
@@ -104,16 +105,15 @@
      * @returns {function}
      */ 
     function createBulletPoint(points) {
-      $('.legal-point').empty();
-      
+      $('.legal-point').find('ul').empty();
+
       // Sorry, no for loop. Do it recursively.
-      return (function(p, i) { 
-        $('.legal-point').append('<ul>');
+      return (function(p, i) {  
         if (i < p.length) {
-          $('.legal-point').append("<a href=\"#"+p[i].id+"\">"+p[i].text+"</a>");
+          $('.legal-point').find('ul').append("<li><a href=\"#"+p[i].id+"\">"+p[i].text+"</a></li>");
           return arguments.callee(p, i+1);          
         } else { 
-          return $('.legal-point').append('</ul>');;
+          return false;
         }  
       })(points, 0);
     }
@@ -138,7 +138,7 @@
         $("#"+e.data.idTag).append(appendActionButton(settings.form));        
 
         // inject list of legal document's point
-        var legalPoint = $('.legal-wrapper').find('h3').map(function() {
+        var legalPoint = $('#'+e.data.idTag).find('h3').map(function() {
           return {
             id: $(this).attr('id'),
             text: $(this).text() 
@@ -201,7 +201,7 @@
         $("#"+e.data.idTag).append(appendActionButton(settings.form));
 
         // inject list of legal document's point
-        var legalPoint = $('.legal-wrapper').find('h3').map(function() {
+        var legalPoint = $('#'+e.data.idTag).find('h3').map(function() {
           return {
             id: $(this).attr('id'),
             text: $(this).text() 
