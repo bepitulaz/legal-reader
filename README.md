@@ -12,23 +12,23 @@ It is an easy to use jQuery plugin, so you can use it on your website with minim
 
 ## Screenshots
 
-1. The code
+__The code__
 
 ![Legal Code](/img/scr_code.png "Legal Reader Code")
 
-2. Homepage
+__Homepage__
 
 ![Home](/img/scr_home.png "Home of the library")
 
-3. Documentation page
+__Documentation page__
  
 ![Documentation](/img/scr_docs.png "Documentation")
 
-4. Example of use page
+__Example of use page__
 
 ![Example](/img/scr_example.png "Usage example")
 
-5. The plugin in action
+__The plugin in action__
 
 ![Convert The Legal](/img/scr_convert.png "Convert the legal")
 
