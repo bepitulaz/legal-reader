@@ -1,0 +1,209 @@
+/**
+ * CSS for Legal Reader jQuery plugin.
+ *
+ * Author: AsepCo Team
+ * License: MIT License
+ */
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 1);
+  z-index: 9999;
+}
+
+/* Effects */
+.overlay-slidedown {
+	visibility: hidden;
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+	-webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
+	transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+}
+
+.overlay-slidedown.open {
+	visibility: visible;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+	-webkit-transition: -webkit-transform 0.4s ease-in-out;
+	transition: transform 0.4s ease-in-out;
+}
+
+/* Legal Content */
+.legal-container {
+  width: 100%;
+  height: 80%;
+  margin: 20px 20px 0 20px;
+  padding: 0;
+}
+
+.legal-point {
+  width: 30%;
+  height: 90%;
+  float: left;
+  margin-right: 30px;
+  overflow-y: scroll;
+}
+
+.legal-wrapper {
+  width: 65%;
+  height: 90%;
+  float: left;
+  overflow-y: scroll;
+}
+
+.clear { clear: both; }
+
+/* legal point */
+.legal-point a {
+  text-decoration: none;
+}
+
+/* button container */
+.legal-button {
+  text-align: center;
+}
+
+.legal-button button {
+  width: 80px;
+  height: 40px;
+  margin: 0 20px 0 20px;
+  background-color: #A1C820;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 5px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+}
+
+.legal-button button:hover {
+  background-color: #ececec;
+  color: #424242;
+}
+
+#legal-decline {
+  background-color: #bdbdbd;
+}
+
+#legal-accept:disabled {
+  background-color: #bdbdbd;
+}
+
+
+/* tool tip if the plugin use outside the form */
+
+[data-tips] {
+	position: relative;
+	text-decoration: none;
+}
+
+[data-tips]:after,
+[data-tips]:before {
+  position: absolute;
+  z-index: 100;
+  opacity: 0;
+}
+
+[data-tips]:after {
+  content: attr(data-tips);
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #222;
+  border-radius: 5px;
+  text-shadow: 0 0 5px #000;
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  white-space: nowrap;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[data-tips]:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: solid;
+}
+
+[data-tips]:hover:after,
+[data-tips]:hover:before {
+  opacity: 1;
+}
+
+
+/* Top tips */
+[data-tips].legal-top-tip:after,
+[data-tips].legal-top-tip:before {
+  -webkit-transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  -moz-transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
+	bottom: 90%;
+	left: -9999px;
+	margin-bottom: 12px;
+}
+
+[data-tips].legal-top-tip:before {
+	border-color: #222 transparent transparent transparent;
+	margin-bottom: 0;
+}
+
+[data-tips].legal-top-tip:hover:after,
+[data-tips].legal-top-tip:hover:before {
+	bottom: 100%;
+	left: 0;
+}
+
+[data-tips].legal-top-tip:hover:before {
+	left: 15px;
+}
+
+
+/* LEGAL WRAPPER */
+.legal-wrapper h1 {
+  font-size: 32px;
+}
+
+.legal-wrapper h2 {
+  font-size: 28px;
+}
+
+.legal-wrapper h3 {
+  font-size: 24px;
+}
+
+.legal-wrapper h4 {
+  font-size: 20px;
+}
+
+.legal-wrapper h5 {
+  font-size: 16px;
+}
+
+.legal-wrapper h6 {
+  font-size: 12px;
+}
+
+/* LEGAL POINTS */
+.legal-point li {
+  list-style: none;
+  padding: 5px 0 5px 0;
+}
+.legal-point li > a {color: #90b310;}
+.legal-point li > a:hover {color: #660066;}
+.legal-point li > a:active {color: #660066;}
+
+/*
+.legal-point a:hover {color: #660066;}
+.legal-point a:active {color: #90b310;}
+.legal-point a:visited {color: #660066;}
