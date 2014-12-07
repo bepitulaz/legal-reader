@@ -77,5 +77,16 @@
         });    
       });
     </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var url = window.location.protocol + "//" + window.location.host;
+        $.get(url + "/LICENSE", function(responseText) {
+          var parsedFile = marked(responseText);
+          $("#license").legalreader(parsedFile, {
+            form: false  
+          });  
+        });    
+      });
+    </script>
   </body>
 </html>
