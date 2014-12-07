@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>ToS Hack - Sign Up</title>
+    <title>Legal Reader 1.0 | Documentation</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -16,6 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="css/form.css" rel="stylesheet">
     <link href="css/legal-reader.css" rel="stylesheet"> 
+    <link href="css/prism.css" rel="stylesheet"> 
   </head>
 
   <body>
@@ -43,21 +44,160 @@
 
     <div class="container-fluid">
       <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li><a href="#">Write Markdown</a></li>
-            <li><a href="#">Pick Markdown Parser</a></li>
-            <li>
-              <a href="#">Let LegalReader work</a>
-              <ul>
-                <li><a href="">Basic Usage</a></li>
-                <li><a href="">Options</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ul class="nav nav-sidebar">
+          <li><a href="#write-markdown">Write Markdown</a></li>
+          <li><a href="#pick-parser">Pick Markdown Parser</a></li>
+          <li>
+            <a href="#let-work">Let LegalReader work</a>
+            <ul>
+              <li><a href="#basic-usage">Basic Usage</a></li>
+              <li><a href="#options">Options</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-9 col-md-10 main">
+        <h3 id="write-markdown">1. Write Your Legal Document in Markdown Format</h3>
+        <p>We use markdown because it is writer friendly and also programmer friendly. You must follow LegalReader conventions when writing your legal document. Don't worry it is not a rocket science.</p>
+        <p>You only need to give <code>###</code> to highlight your point. See the example below.</p>
+        <pre>
+          <code class="language-javascript">
+          ### 1. This is the first point I want to highlight.
           
-        </div>
+          Bla...bla...this is the description for point 1.
+
+          ### 2. This is the second point I want to highlight.
+
+          1. This is only a list of terms related to point 2.
+          2. This is only a list of terms related to point 2 also.
+
+          ### 3. Only point with h3 tag will be highlighted by LegalReader.
+          </code>
+        </pre>
+        <h3 id="pick-parser">2. Pick Markdown Parser</h3>
+        <p>LegalReader 1.0 doesn't include its own markdown parser. So, pick one of any markdown parser to convert your markdown file into html. You can use our favourite, <a href="https://github.com/chjj/marked" target="_blank">Marked</a>. Easy, we will show you how to use it on the next section.</p>  
+        <h3 id="let-work">3. Let LegalReader Work</h3>
+        <h5 id="basic-usage">Basic usage</h5>
+        <p>Below is the very basic usage of LegalReader with Marked markdown parser and used inside the <code>&lt;form&gt;</code> tag.</p>
+        <pre>
+          <code class="language-javascript">
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;!-- puts basic stylesheet to make LegalReader works --&gt;
+              &lt;link rel="stylesheet" type="text/css" href="css/legal-reader.css"&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;form&gt;
+                &lt;!-- create empty div and give any id attribute --&gt;
+                &lt;div id="legal-reader"&gt;&lt;/div&gt;
+                &lt;!-- you must use input with type submit --&gt;
+                &lt;input type="submit"&gt;
+              &lt;/form&gt;
+              
+              &lt;!-- puts all dependencies --&gt;
+              &lt;script type="text/javascript" src="js/jquery.min.js"&gt;&lt;/script&gt;
+              &lt;script type="text/javascript" src="js/marked.min.js"&gt;&lt;/script&gt;
+              &lt;script type="text/javascript" src="js/legal-reader.js"&gt;&lt;/script&gt;
+              &lt;script type="text/javascript"&gt;
+              $(document).ready(function() {
+                // 1. Read your markdown file that had been written by following our conventions
+                $.get("http://localhost:3000/legal-file/tos.md", function(responseText) {
+                  // 2. Use Marked markdown parser
+                  var parsedFile = marked(responseText);
+                  // 3. Let Legal Reader processes the html file
+                  $('#legal-reader').legalreader(parsedFile); 
+                }); 
+              });
+              &lt;/script&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </code>
+        </pre>
+        <p>Below is the very basic usage of LegalReader with Marked markdown parser and used outside the <code>&lt;form&gt;</code> tag.</p>
+        <pre>
+          <code class="language-javascript">
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;!-- puts basic stylesheet to make LegalReader works --&gt;
+              &lt;link rel="stylesheet" type="text/css" href="css/legal-reader.css"&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              
+              Please read our &lt;a href="" id="privacy-policy"&gt;Privacy Policy&lt;/a&gt; 
+              
+              &lt;!-- puts all dependencies --&gt;
+              &lt;script type="text/javascript" src="js/jquery.min.js"&gt;&lt;/script&gt;
+              &lt;script type="text/javascript" src="js/marked.min.js"&gt;&lt;/script&gt;
+              &lt;script type="text/javascript" src="js/legal-reader.js"&gt;&lt;/script&gt;
+              &lt;script type="text/javascript"&gt;
+              $(document).ready(function() {
+                // 1. Read your markdown file that had been written by following our conventions
+                $.get("http://localhost:3000/legal-file/privacy.md", function(responseText) {
+                  // 2. Use Marked markdown parser
+                  var parsedFile = marked(responseText);
+                  // 3. Let Legal Reader processes the html file outside the form
+                  $('#privacy-policy').legalreader(parsedFile, { form: false }); 
+                }); 
+              });
+              &lt;/script&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </code>
+        </pre>
+
+        <h5 id="options">Plugin Options</h5>
+        <p>You can customise LegalReader jQuery plugin with these parameters.</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Option Name</th>
+              <th>Default Value</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>form</td>
+              <td>true</td>
+              <td>boolean</td>
+              <td>Determine where the plugin will be called. Change to <code>false</code> if you want to use outside the form.</td>
+            </tr>
+            <tr>
+              <td>legalName</td>
+              <td>Terms and Conditions</td>
+              <td>string</td>
+              <td>This is for displaying your legal document name on the front end. Change it to whatever you want. This option only use inside the form.</td>
+            </tr>
+            <tr>
+              <td>legalSentence</td>
+              <td>Read our</td>
+              <td>string</td>
+              <td>This is for displaying call to action sentence in front of your legal document name. Change it to whatever you want. This option only use inside the form.</td>
+            </tr>
+            <tr>
+              <td>legalAccept</td>
+              <td>I have agreed with the</td>
+              <td>string</td>
+              <td>This is for displaying the sentence after user accept the terms of your legal document. Change it to whatever you want. This option only use inside the form.</td>
+            </tr>
+            <tr>
+              <td>wordPerMinute</td>
+              <td>275</td>
+              <td>integer</td>
+              <td>Default average word per minute that human can read to calculate the reading time.</td>
+            </tr>
+            <tr>
+              <td>timeString</td>
+              <td>minutes reading</td>
+              <td>string</td>
+              <td>This is for displaying the unit measurement of reading time (in minute). Change it to your language.</td>
+            </tr> 
+          </tbody>
+        </table>
+      </div>
     </div> <!-- Container ends here -->
 
     <footer class="footer">
@@ -68,15 +208,9 @@
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/prism.js"></script>
     <script type="text/javascript" src="js/marked.min.js"></script>
     <script type="text/javascript" src="js/legal-reader.js"></script>    
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $.get("http://localhost:3000/legal-file/tos.md", function(responseText) {
-          $("#legal-reader").legalreader(marked(responseText), {legalSentence: "Please read our", legalName: "Terms & Conditions", timeString: "minutes only to read it"});
-        });    
-      });
-    </script>
     <script type="text/javascript">
       $(document).ready(function() {
         var url = window.location.protocol + "//" + window.location.host;
@@ -87,6 +221,6 @@
           });  
         });    
       });
-    </script>
+    </script> 
   </body>
 </html>
