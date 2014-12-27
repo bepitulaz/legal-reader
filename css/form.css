@@ -1,0 +1,324 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+
+body {
+  background-color: #fff !important;
+  min-height: 600px;
+}
+
+body.example {
+  padding-bottom: 40px;
+  background-color: #A1C820 !important;
+  min-height: 800px;
+}
+
+h1 {font-size: 60px}
+h2 {font-size: 48px}
+h3 {font-size: 40px}
+h4 {font-size: 26px}
+h5 {font-size: 18px}
+h6 {font-size: 12px}
+
+::selection {
+  background-color: #AC91C8;
+  color: #fff;
+}
+
+.navbar {
+  background-color: #D9E0D0;
+  border-bottom: none;
+  z-index: 1;
+}
+
+.navbar-static-top {
+  margin-bottom: 0px;
+  height: 100px;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-default .logo {
+  padding-top: 15px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  color: #424242;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 40px;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.navbar-default .navbar-nav>.active>a {
+  background-color: transparent !important;
+  font-family: 'Bold', Arial, sans-serif;
+  color: #fff;
+  font-size: 16px;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.jumbotron {
+  background-color: #D9E0D0;
+  color: #424242;
+}
+
+.jumbotron h2 {
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+}
+
+.jumbotron p {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 300;
+}
+
+.overview {
+  color: #555;
+}
+
+.btn-download {
+  padding: 15px 25px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 6px;
+  border: none;
+  background: #A1C820;
+  background-image: -webkit-linear-gradient(top, #A1C820, #90b310);
+  background-image: -moz-linear-gradient(top, #A1C820, #90b310);
+  background-image: -ms-linear-gradient(top, #A1C820, #90b310);
+  background-image: -o-linear-gradient(top, #A1C820, #90b310);
+  background-image: linear-gradient(to bottom, #A1C820, #90b310);
+}
+
+.btn-download:hover {
+  background: #b9db40;
+  background-image: -webkit-linear-gradient(top, #b9db40, #aacc31);
+  background-image: -moz-linear-gradient(top, #b9db40, #aacc31);
+  background-image: -ms-linear-gradient(top, #b9db40, #aacc31);
+  background-image: -o-linear-gradient(top, #b9db40, #aacc31);
+  background-image: linear-gradient(to bottom, #b9db40, #aacc31);
+}
+
+.btn-start {
+  padding-left: 50px;
+  font-size: 24px;
+  color: #888;
+  font-family: 'Light', Arial, sans-serif;
+  text-decoration: underline;
+}
+
+.btn-start:hover {
+  color: #90b310;
+}
+
+.start h4 {
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-weight: 400;
+}
+
+.start p {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 300;
+}
+
+.start a {
+  color: #65B300;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.inside {
+  border: 1px solid #D9E0D0;
+  border-radius: 10px;
+}
+
+.form-signup {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signup-heading {
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #A3B1A7;
+  text-transform: lowercase;
+  text-align: center;
+}
+.form-signup .form-signup-heading,
+.form-signup .checkbox {
+  margin-bottom: 40px;
+}
+.form-signup .checkbox {
+  font-weight: normal;
+}
+.form-signup .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signup .form-control:focus {
+  z-index: 2;
+}
+.form-signup input[type="email"] {
+  margin-bottom: -1px;
+}
+.form-signup input[type="password"] {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-family: 'Light', Arial, sans-serif;
+  color: #424242;
+}
+
+.signmeup {
+  width: 100%;
+  height: 45px;
+  margin: 20px 0 20px 0;
+  background-color: #660066;
+  border: none;
+  color: #fff;
+  font-family: 'Light', Arial, sans-serif;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.signmeup:disabled {
+  color: #AA7FAA;
+  background-color: #4C004C;
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+  z-index: 1000;
+}
+
+.footer a {
+  color: #65B300;
+}
+
+.example {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.example .row {
+  margin-bottom: 40px;
+}
+
+.nav-pills a {
+  color: #65B300;
+}
+
+.nav-pills a:hover {
+  background-color: #fff !important;
+  color: #424242;
+}
+
+/* SIDEBAR */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #fff;
+  }
+  .sidebar a {
+    color: #65B300;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+.about a {
+  color: #65B300;
+}
+
+.main h3 {
+  margin-bottom: 30px;
+}
+
+.main p {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 30px
+}
+
+
