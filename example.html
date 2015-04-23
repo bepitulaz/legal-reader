@@ -111,7 +111,7 @@
     
     <script type="text/javascript">
       $(document).ready(function() {
-        var url = window.location.protocol + "//" + window.location.host;
+        var url = window.location.protocol + "//" + window.location.host + "/legal-reader";
 
         $.get(url + "/legal-file/tos.md", function(responseText) {
           $("#legal-reader").legalreader(marked(responseText), {legalSentence: "Please read our", legalName: "Terms & Conditions", timeString: "minutes only to read it"});
