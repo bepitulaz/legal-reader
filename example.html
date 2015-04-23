@@ -133,6 +133,7 @@
         });
 
         // tos
+        console.log(url);
         $.get(url + "/legal-file/term-of-service.md", function(responseText) {
           var parsedFile = marked(responseText);
           $("#term-of-service").legalreader(parsedFile, {
